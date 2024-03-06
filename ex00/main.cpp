@@ -6,7 +6,7 @@
 /*   By: lde-mich <lde-mich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 17:59:05 by lde-mich          #+#    #+#             */
-/*   Updated: 2024/03/04 18:01:38 by lde-mich         ###   ########.fr       */
+/*   Updated: 2024/03/06 11:19:48 by lde-mich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 int main ()
 {
+	int n = 4; // numero da cercare nel container
 	std::vector<int> container1;
 
 	container1.push_back(1);
@@ -22,12 +23,14 @@ int main ()
 	container1.push_back(3);
 
 	for (size_t i = 0; i < container1.size(); i++)
-		std::cout << "elememto-->"<< container1[i] << std::endl;
+		std::cout << "elememt-->"<< container1[i] << std::endl;
 
-	if (::easyFind(container1, 2))
-		std::cout << "il numero da cercare è stato trovato" << std::endl;
+	std::cout << "" << std::endl;
+
+	if (::easyFind(container1, n))
+		std::cout << "number:" << n << " ->found" << std::endl;
 	else
-		std::cout << "il numero da cercare non è stato trovato" << std::endl;
+		std::cout << "number:" << n << " ->not found" << std::endl;
 
 	return (0);
 }
