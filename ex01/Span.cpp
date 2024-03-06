@@ -6,7 +6,7 @@
 /*   By: lde-mich <lde-mich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 16:12:54 by lde-mich          #+#    #+#             */
-/*   Updated: 2024/03/06 16:15:23 by lde-mich         ###   ########.fr       */
+/*   Updated: 2024/03/06 16:30:35 by lde-mich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,9 @@ Span &Span::operator=(Span const &obj)
 {
 	if (this == &obj)
 		return (*this);
-	
+
+	this->container = obj.container;
 	this->size = obj.size;
-	for (unsigned int i = 0; i < obj.container.size(); i++)
-		this->container[i] = obj.container[i];
 
 	return (*this);
 }
