@@ -6,7 +6,7 @@
 /*   By: lde-mich <lde-mich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 16:12:54 by lde-mich          #+#    #+#             */
-/*   Updated: 2024/03/06 12:34:26 by lde-mich         ###   ########.fr       */
+/*   Updated: 2024/03/06 16:15:23 by lde-mich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,7 @@ Span::Span(Span const &obj)
 Span::Span(unsigned int n)
 {
 	this->size = n;
-	this->container.resize(this->size);
-	for (unsigned int i = 0; i < this->container.size(); i++)
-		this->container[i] = 0;
+    this->container.resize(this->size, 0);
 }
 
 Span::~Span()
@@ -58,17 +56,14 @@ unsigned int const &Span::getSize() const
 
 void Span::addNumber(unsigned int n)
 {
-	std::cout << "size-->" << this->size << std::endl;
-
 	for (unsigned int i = 0; i < this->size; i++)
-	{
-		std::cout << "i-->" << i << "   c-->" << container[i]<< "\n" << std::endl;
-
+	{	
 		if (this->container[i] == 0)
 		{
-			container.push_back(n);
+			this->container[i] = n;
 			return ;
 		}
+
 	}
 
 	throw Span::MemoryFullException();
