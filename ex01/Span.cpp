@@ -6,7 +6,7 @@
 /*   By: lde-mich <lde-mich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 16:12:54 by lde-mich          #+#    #+#             */
-/*   Updated: 2024/03/06 16:30:35 by lde-mich         ###   ########.fr       */
+/*   Updated: 2024/03/07 11:27:02 by lde-mich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,8 +78,13 @@ unsigned int Span::shortestSpan()
 
 unsigned int Span::longestSpan()
 {
-	unsigned int n = 5;
-	return (n);
+	std::vector<unsigned int>::iterator maxElement;
+	maxElement = std::max_element(this->container.begin(), this->container.end());
+
+	std::vector<unsigned int>::iterator minElement;
+	minElement = std::min_element(this->container.begin(), this->container.end());
+
+	return (*maxElement - *minElement);
 }
 
 
