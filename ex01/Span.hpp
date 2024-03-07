@@ -6,7 +6,7 @@
 /*   By: lde-mich <lde-mich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 16:09:03 by lde-mich          #+#    #+#             */
-/*   Updated: 2024/03/07 10:43:33 by lde-mich         ###   ########.fr       */
+/*   Updated: 2024/03/07 15:39:35 by lde-mich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <numeric>
+#include <cstdlib>
+#include <ctime>
 
 class Span
 {
@@ -29,7 +32,7 @@ class Span
 		Span &operator=(Span const &obj);
 
 		void addNumber(unsigned int n);
-
+		void addMoreNumber();
 		unsigned int shortestSpan();
 		unsigned int longestSpan();
 
@@ -44,7 +47,17 @@ class Span
             public:
                 virtual const char	*what() const throw()
 				{
-					return ("Error, memory container full");
+					return ("Error, container full");
+				};
+        };
+
+
+		class NumberStoredException: public std::exception
+        {
+            public:
+                virtual const char	*what() const throw()
+				{
+					return ("Error, only number found");
 				};
         };
 
