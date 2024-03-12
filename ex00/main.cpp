@@ -6,7 +6,7 @@
 /*   By: lde-mich <lde-mich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 17:59:05 by lde-mich          #+#    #+#             */
-/*   Updated: 2024/03/06 11:19:48 by lde-mich         ###   ########.fr       */
+/*   Updated: 2024/03/13 00:01:03 by lde-mich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int main ()
 {
-	int n = 4; // numero da cercare nel container
+	int n = 2; // numero da cercare nel container
 	std::vector<int> container1;
 
 	container1.push_back(1);
